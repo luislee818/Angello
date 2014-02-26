@@ -1,0 +1,35 @@
+<!DOCTYPE html5>
+<html ng-app="Angello">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>App</title>
+		<script src="bower_components/angular/angular.js" type="text/javascript" charset="utf-8"></script>
+		<script src="app.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+	<div ng-controller="MainCtrl">
+		<div class="span4 sidebar-content">
+			<h2>Stories</h2>
+			<div class="story" ng-repeat="story in stories" ng-click="setCurrentStory(story)">
+				<h4>{{story.title}}</h4>
+				<p>{{story.description}}</p>
+			</div>
+		</div>
+		<br>
+		<a class="btn" href="" ng-click="createStory()"><i class="icon-plus">Add Story</i></a>
+		<div class="span6 body-content">
+			<h2>Story</h2>
+			<form class="form-horizontal" action="">
+				<div class="control-group">
+					<label class="control-label" for="inputTitle">Title</label>
+					<div class="controls"><input type="text" placeholder="Title" ng-model="currentStory.title"></div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputDescription">Description</label>
+					<div class="controls"><textarea id="inputDescription" name="" cols="30" rows="3" placeholder="Description" ng-model="currentStory.description"></textarea></div>
+				</div>
+			</form>
+		</div>
+	</div>
+	</body>
+</html>
